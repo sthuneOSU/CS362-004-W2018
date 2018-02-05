@@ -1,0 +1,148 @@
+unittest1.c:
+testing 3 province cards remaining ... TEST PASSED
+testing 2 province cards remaining ... TEST PASSED
+testing 1 province cards remaining ... TEST PASSED
+testing 0 province cards remaining ... TEST PASSED
+testing 0 empty supply piles ... TEST PASSED
+testing 2 empty supply piles ... TEST PASSED
+testing 3 empty supply piles (curse, estate, duchy)... TEST PASSED
+testing 3 empty supply piles (copper, baron, salvager) ... TEST PASSED
+File 'dominion.c'
+Lines executed:17.58% of 563
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+TESTING getCost() for valid cards (0 through 27)
+Testing card 0 has value 0 ... PASSED
+Testing card 1 has value 2 ... PASSED
+Testing card 2 has value 5 ... PASSED
+Testing card 3 has value 8 ... PASSED
+Testing card 4 has value 0 ... PASSED
+Testing card 5 has value 3 ... PASSED
+Testing card 6 has value 6 ... PASSED
+Testing card 7 has value 6 ... PASSED
+Testing card 8 has value 5 ... PASSED
+Testing card 9 has value 4 ... PASSED
+Testing card 10 has value 4 ... PASSED
+Testing card 11 has value 5 ... PASSED
+Testing card 12 has value 4 ... PASSED
+Testing card 13 has value 4 ... PASSED
+Testing card 14 has value 3 ... PASSED
+Testing card 15 has value 4 ... PASSED
+Testing card 16 has value 3 ... PASSED
+Testing card 17 has value 5 ... PASSED
+Testing card 18 has value 3 ... PASSED
+Testing card 19 has value 5 ... PASSED
+Testing card 20 has value 3 ... PASSED
+Testing card 21 has value 4 ... PASSED
+Testing card 22 has value 2 ... PASSED
+Testing card 23 has value 5 ... PASSED
+Testing card 24 has value 4 ... PASSED
+Testing card 25 has value 4 ... PASSED
+Testing card 26 has value 4 ... PASSED
+Testing invalid card (-1) returns -1 ... PASSED
+Testing invalid card (28) returns -1 ... PASSED
+File 'dominion.c'
+Lines executed:22.91% of 563
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+invalid phase causes return value -1 ... TEST PASSED
+not enough actions causes return value -1 ... TEST PASSED
+invalid card ID causes return value -1 ... TEST PASSED
+invalid choice1 on ambassador causes return value -1 ... TEST PASSED
+run function correctly, check return value is 0 ... TEST PASSED
+run function correctly, check that actions is reduced by 1 ... (4-1 = 3) TEST PASSED
+File 'dominion.c'
+Lines executed:33.75% of 563
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+Checking hand,deck,discard size 2 ... matching cards ... (6 = 6) TEST PASSED
+			       ... no matching cards ... (0 = 0) TEST PASSED
+Checking hand,deck,discard size 1 ... matching cards ... (3 = 3) TEST PASSED
+			       ... no matching cards ... (0 = 0) TEST PASSED
+Checking hand,deck,discard size 0 ... matching cards ... (0 = 0) TEST PASSED
+			       ... no matching cards ... (0 = 0) TEST PASSED
+File 'dominion.c'
+Lines executed:35.35% of 563
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+CURRENT player IS 0
+player 0 has 2 more cards in hand ...  (5 < 4) TEST FAILED
+player 0 has 3 less cards in deck ...  (5 > 5) TEST FAILED
+player 0 has 3 more cards in discard pile ...  (0 < 0) TEST FAILED
+player 1 has unchanged hand count ...  (0 = 3) TEST FAILED
+player 1 has unchanged deck count ...  (10 = 7) TEST FAILED
+player 1 has unchanged discard pile ...  (0 = 0) TEST PASSED
+playedCardCount has increased by 1 ...  (1 = 1) TEST PASSED
+Test that victory card piles are unchanged ... TEST PASSED
+File 'dominion.c'
+Lines executed:36.59% of 563
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+TESTING CARD: ADVENTURER
+player 0 hand size has increased ...  (5 < 7) TEST PASSED
+player 0 deck size has decreased ...  (5 > 3) TEST PASSED
+player 0 has more cards in discard pile ...  (0 < 0) TEST FAILED
+player 1 has unchanged hand count ...  (0 = 0) TEST PASSED
+player 1 has unchanged deck count ...  (10 = 10) TEST PASSED
+player 1 has unchanged discard pile ...  (0 = 0) TEST PASSED
+Test that victory card piles are unchanged ... TEST PASSED
+File 'dominion.c'
+Lines executed:38.90% of 563
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+TESTING CARD: VILLAGE
+player 0 hand size is unchanged ...  (5 = 5) TEST PASSED
+player 0 deck size has decreased ...  (5-1 = 4) TEST PASSED
+player 0 has more cards in discard pile ...  (0+1 = 0) TEST FAILED
+player 1 has unchanged hand count ...  (0 = 0) TEST PASSED
+player 1 has unchanged deck count ...  (10 = 10) TEST PASSED
+player 1 has unchanged discard pile ...  (0 = 0) TEST PASSED
+Test that victory card piles are unchanged ... TEST PASSED
+Test that actions have increased by 2 ...  (1+2=3) TEST PASSED
+File 'dominion.c'
+Lines executed:39.61% of 563
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+TESTING CARD: EMBARGO
+2 coins have been added ...  (4+2 = 6) TEST PASSED
+player 1 has unchanged hand count ...  (0 = 0) TEST PASSED
+player 1 has unchanged deck count ...  (10 = 10) TEST PASSED
+player 1 has unchanged discard pile ...  (0 = 0) TEST PASSED
+Test that victory card piles are correctly modified:Card 0 is in play, test for embargo token ... TEST FAILED
+Card 1 is in play, test for embargo token ... TEST PASSED
+Card 2 is in play, test for embargo token ... TEST PASSED
+Card 3 is in play, test for embargo token ... TEST PASSED
+Card 4 is in play, test for embargo token ... TEST PASSED
+Card 5 is in play, test for embargo token ... TEST PASSED
+Card 6 is in play, test for embargo token ... TEST PASSED
+Card 7 is in play, test for embargo token ... TEST PASSED
+Card 8 is in play, test for embargo token ... TEST PASSED
+Card 9 is not in play, test for -1 return value ... TEST PASSED
+Card 10 is not in play, test for -1 return value ... TEST PASSED
+Card 11 is in play, test for embargo token ... TEST PASSED
+Card 12 is not in play, test for -1 return value ... TEST PASSED
+Card 13 is in play, test for embargo token ... TEST PASSED
+Card 14 is in play, test for embargo token ... TEST PASSED
+Card 15 is not in play, test for -1 return value ... TEST PASSED
+Card 16 is not in play, test for -1 return value ... TEST PASSED
+Card 17 is in play, test for embargo token ... TEST PASSED
+Card 18 is not in play, test for -1 return value ... TEST PASSED
+Card 19 is in play, test for embargo token ... TEST PASSED
+Card 20 is not in play, test for -1 return value ... TEST PASSED
+Card 21 is in play, test for embargo token ... TEST PASSED
+Card 22 is in play, test for embargo token ... TEST PASSED
+Card 23 is not in play, test for -1 return value ... TEST PASSED
+Card 24 is not in play, test for -1 return value ... TEST PASSED
+Card 25 is in play, test for embargo token ... TEST PASSED
+Card 26 is not in play, test for -1 return value ... TEST PASSED
+File 'dominion.c'
+Lines executed:40.85% of 563
+Creating 'dominion.c.gcov'
+
