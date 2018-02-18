@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define TESTCARD "village"
+#define TESTCARD "smithy"
 #define TEST_ITERATIONS 2000;
 
 int main() {
@@ -32,18 +32,16 @@ int main() {
 		initializeGame(numPlayers, k, seed, &G);
 		int currentPlayer = rand()%numPlayers;
 		G.whoseTurn = currentPlayer;
-		//set currentPlayer hand
+		//draw cards for everyone
 		for (n = 1; n < numPlayers; n++) {
 			for (j = 0; j < 5; j++)
 				drawCard(n, &G);
 		}
-		G.hand[currentPlayer][0] = village;
+		//G.hand[currentPlayer][0] = smithy;
 		
 		memcpy(&testG, &G, sizeof(struct gameState)); //set testG = G
-		cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
+		cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
 		
-
-		//check hands
 		/*//check current player's hand/deck/discard counts before and after card is played
 		printf("currentPlayer is %d of %d ", currentPlayer, numPlayers);
 		printf("<%d %d> ",G.handCount[currentPlayer], testG.handCount[currentPlayer]);
@@ -51,9 +49,10 @@ int main() {
 		printf("<%d %d>\n",G.discardCount[currentPlayer], testG.discardCount[currentPlayer]);
 		*///test me
 		
+		//check hands
 		for (j = 0; j < numPlayers; j++) {
 			if (j == currentPlayer) {
-				if (G.handCount[currentPlayer] != testG.handCount[currentPlayer] ) {
+				if (G.handCount[currentPlayer] + 2 != testG.handCount[currentPlayer] ) {
 					printf("iter%d: currentPlayer hand...FAIL ",i);
 					failFlag = 1;
 				}	
@@ -68,7 +67,7 @@ int main() {
 		//check decks
 		for (j = 0; j < numPlayers; j++) {
 			if (j == currentPlayer) {
-				if (G.deckCount[j] - 1 != testG.deckCount[j]) {
+				if (G.deckCount[j] - 3 != testG.deckCount[j]) {
 					printf("iter%d: currentPlayer deck...FAIL ",i);
 					failFlag = 1;
 				}
@@ -101,11 +100,6 @@ int main() {
 				printf("iter%d pile%d: victory card...FAIL ",i,j);
 				failFlag = 1;
 			}
-		}
-		//check actions
-		if (G.numActions + 2 != testG.numActions) {
-			printf("iter%d:numActions...FAIL ",i);
-			failFlag = 1;
 		}
 	}
 	if (!failFlag)
