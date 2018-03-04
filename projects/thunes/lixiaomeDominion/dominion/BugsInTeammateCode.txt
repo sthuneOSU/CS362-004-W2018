@@ -1,0 +1,82 @@
+Template from http://www.noverse.com/images/noverse-bug-reporting-template.txt
+
+==============================
+==============================
+========= BUG 1 ==============
+==============================
+==============================
+
+Title:  Smithy card draws incorrect number of cards from deck
+
+Class: Serious Bug
+     
+Is it reproducible: Yes
+
+Description
+===========
+The Smithy card draws four cards from a player's deck, where only three should
+be drawn.
+
+
+Steps to Produce/Reproduce
+--------------------------
+Set up any valid gameState, then invoke cardEffect(smithy, ...) and check
+the player's number of cards before and after (player should have two more cards, 
+not three because of Smithy being discarded).
+
+
+Expected Results
+----------------
+Playing the Smithy card should add three cards to the player's hand.
+
+
+Actual Results
+--------------
+Four cards are added to the player's hand.
+
+
+Other Information
+-----------------
+
+
+==============================
+==============================
+========= BUG 2 ==============
+==============================
+==============================
+
+Title:  Adventurer cardEffect fails to discard all cards
+
+Class:   Serious Bug
+
+Is it reproducible: Yes
+
+Description
+===========
+The Adventurer card creates a temporary discard hand that gets sent to the
+discard pile when two treasure cards are drawn.  In this implementation,
+the first card drawn does not get removed from the temporary hand.
+
+
+Steps to Produce/Reproduce
+--------------------------
+Set up any valid gameState, then invoke cardEffect(adventurer, ...) and check
+the player's discard pile before and after the function call.  The discard pile
+will have one less card than expected.
+
+
+Expected Results
+----------------
+Player draws N non-treasure cards before finding two treasure cards, then all N
+cards are discarded.
+
+
+Actual Results
+--------------
+Player draws N non-treasure cards before finding two treasure cards, then (N-1)
+cards are discarded.
+
+
+Other Information
+-----------------
+
